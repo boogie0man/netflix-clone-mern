@@ -7,6 +7,7 @@ const app = express();
 const port = 8080;
 
 const authRoutes = require("./routes/authRoute");
+const UserRoutes = require("./routes/UserRoute");
 
 app.use(bodyParser.json());
 
@@ -21,6 +22,7 @@ mongoose
   .catch((err) => console(err));
 
 app.use("/auth", authRoutes);
+app.use("/user", UserRoutes);
 
 app.listen(port, () => {
   console.log("Connected to port:", port);
