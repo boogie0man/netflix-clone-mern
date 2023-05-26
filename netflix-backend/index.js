@@ -8,6 +8,7 @@ const port = 8080;
 
 const authRoutes = require("./routes/authRoute");
 const UserRoutes = require("./routes/UserRoute");
+const MoviesRoute = require("./routes/MoviesRoute");
 
 app.use(bodyParser.json());
 
@@ -23,6 +24,7 @@ mongoose
 
 app.use("/auth", authRoutes);
 app.use("/user", UserRoutes);
+app.use("/movies", MoviesRoute);
 
 app.listen(port, () => {
   console.log("Connected to port:", port);

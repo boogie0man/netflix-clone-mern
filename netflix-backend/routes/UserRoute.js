@@ -129,8 +129,7 @@ router.get("/stats", verifyToken, (req, res) => {
           count: { $sum: 1 },
         },
       },
-    ]);
-    res.status(200).json(data);
+    ]).then((data) => res.status(200).json(data));
   } catch (e) {
     res.status(500).json({ message: e, status: "Somthing went wrong!" });
   }
